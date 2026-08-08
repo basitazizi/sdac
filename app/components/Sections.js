@@ -24,11 +24,24 @@ export function SectionHeading({ eyebrow, title, text, align = "center" }) {
   );
 }
 
-export function IconCard({ icon: Icon, image, title, text, href, action = "Learn More" }) {
+export function IconCard({
+  icon: Icon,
+  image,
+  imagePosition,
+  title,
+  text,
+  href,
+  action = "Learn More",
+}) {
   return (
     <article className="icon-card">
       {image ? (
-        <img className="card-photo" src={image} alt="" />
+        <img
+          className="card-photo"
+          src={image}
+          alt=""
+          style={imagePosition ? { objectPosition: imagePosition } : undefined}
+        />
       ) : Icon ? (
         <span className="icon-badge">
           <Icon size={30} />

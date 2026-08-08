@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Handshake, Quote } from "lucide-react";
+import { ArrowRight, Handshake } from "lucide-react";
 import { BandCta, IconCard, SectionHeading } from "./components/Sections";
 import { programs, services, site, values } from "./lib/siteData";
 
@@ -81,37 +81,6 @@ export default function HomePage() {
             <Link className="btn-primary" href="/services">
               View All Services <ArrowRight size={16} />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-block">
-        <div className="section-inner impact-layout">
-          <div className="impact-cards">
-            {["Families Supported", "Youth Mentorship", "English Learning", "Community Events"].map(
-              (item) => (
-                <div className="impact-tile" key={item}>
-                  <span>SDAC</span>
-                  <strong>{item}</strong>
-                </div>
-              ),
-            )}
-          </div>
-          <div>
-            <p className="eyebrow">Our Impact</p>
-            <h2>Building trust through consistent local support.</h2>
-            <p>
-              SDAC is growing its impact through education, family support,
-              cultural programming, youth activities, and community partnerships.
-              Confirmed numbers can be added here as programs expand.
-            </p>
-            <blockquote>
-              <Quote size={28} />
-              <span>
-                "SDAC gives families a place to ask questions, find support, and
-                feel connected to community."
-              </span>
-            </blockquote>
           </div>
         </div>
       </section>

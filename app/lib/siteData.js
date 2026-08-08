@@ -84,6 +84,7 @@ export const services = [
     icon: BookOpen,
     category: "Youth & Education",
     image: "/sdac-community-presentation.png",
+    imagePosition: "46% 32%",
   },
   {
     title: "Immigration Navigation",
