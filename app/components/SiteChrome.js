@@ -1,23 +1,37 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { HeartHandshake, Menu } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowUp, HeartHandshake, Menu } from "lucide-react";
 import { navItems, site } from "../lib/siteData";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setShowBackToTop(window.scrollY > 520);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
-    <header className="relative z-20 bg-white shadow-[0_2px_16px_rgba(0,0,0,0.07)]">
-      <div className="relative mx-auto flex h-[72px] max-w-[884px] items-center justify-between px-5 sm:px-8 lg:px-0">
-        <Link className="flex items-center" href="/" aria-label="SDAC home">
-          <img
-            className="h-[58px] w-[58px] object-contain sm:h-[62px] sm:w-[62px]"
-            src="/sdac-logo.png"
-            alt="SDAC logo"
-          />
-        </Link>
+    <>
+      <header className="relative z-20 bg-white shadow-[0_2px_16px_rgba(0,0,0,0.07)]">
+        <div className="relative mx-auto flex h-[72px] max-w-[884px] items-center justify-between px-5 sm:px-8 lg:px-0">
+          <Link className="site-logo-badge" href="/" aria-label="SDAC home">
+            <img
+              className="site-logo-image"
+              src="/sdac-logo.png"
+              alt="SDAC logo"
+            />
+          </Link>
 
         <nav className="hidden items-center gap-7 text-[13px] font-bold text-[#282d35] lg:flex">
           {navItems.map((item) => (
@@ -63,7 +77,18 @@ export function SiteHeader() {
           </nav>
         ) : null}
       </div>
-    </header>
+      </header>
+
+      <button
+        type="button"
+        className={`back-to-top ${showBackToTop ? "visible" : ""}`}
+        aria-label="Back to top"
+        onClick={scrollToTop}
+      >
+        <ArrowUp size={18} />
+        <span>Top</span>
+      </button>
+    </>
   );
 }
 
@@ -87,7 +112,7 @@ export function SiteFooter() {
 
       <div className="footer-main">
         <div className="footer-brand">
-          <img src="/sdac-logo.png" alt="SDAC logo" />
+          <img className="site-logo-image" src="/sdac-logo.png" alt="SDAC logo" />
           <h3>{site.displayName}</h3>
           <p>
             Supporting Afghan families through education, mentorship, culture,

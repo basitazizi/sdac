@@ -34,9 +34,14 @@ export default function ServicesPage() {
             text="Each service can connect to the contact form so families can ask for help quickly."
           />
           <div className="service-detail-grid">
-            {serviceCategories.map(({ icon: Icon, image, title, items }) => (
+            {serviceCategories.map(({ icon: Icon, image, imagePosition, title, items }) => (
               <article className="service-detail" key={title}>
-                <img className="service-photo" src={image} alt="" />
+                <img
+                  className="service-photo"
+                  src={image}
+                  alt=""
+                  style={imagePosition ? { objectPosition: imagePosition } : undefined}
+                />
                 <span className="icon-badge">
                   <Icon size={30} />
                 </span>

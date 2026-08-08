@@ -94,6 +94,35 @@ a {
   background: #494744;
 }
 
+.site-logo-badge {
+  position: relative;
+  display: grid;
+  width: 60px;
+  height: 60px;
+  place-items: center;
+  border-radius: 50%;
+  background: #fcbf1a;
+  box-shadow: 0 9px 24px rgba(73, 71, 68, 0.14);
+  overflow: hidden;
+}
+
+.site-logo-badge::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(73, 71, 68, 0.22);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.site-logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
 .btn-primary,
 .btn-accent,
 .header-donate {
@@ -173,6 +202,35 @@ a {
   justify-content: center;
   color: #494744 !important;
   background: #fcbf1a;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 20px;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 0 15px;
+  color: #494744;
+  background: #fcbf1a;
+  border: 2px solid #494744;
+  border-radius: 999px;
+  box-shadow: 0 15px 36px rgba(73, 71, 68, 0.22);
+  font-size: 13px;
+  font-weight: 900;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .compact {
@@ -623,20 +681,28 @@ blockquote {
 
 .service-detail {
   overflow: hidden;
-  padding: 28px;
+  padding: 0 0 28px;
 }
 
 .service-photo {
   display: block;
-  width: calc(100% + 56px);
+  width: 100%;
   height: 172px;
-  margin: -28px -28px 24px;
+  margin: 0 0 24px;
   object-fit: cover;
   object-position: center;
 }
 
+.service-detail .icon-badge,
+.service-detail h2,
+.service-detail ul,
+.service-detail .read-link {
+  margin-left: 28px;
+  margin-right: 28px;
+}
+
 .service-detail ul {
-  margin: 18px 0 0;
+  margin: 18px 28px 0;
   padding-left: 20px;
 }
 
@@ -921,6 +987,10 @@ blockquote {
 }
 
 @media (max-width: 767px) {
+  .back-to-top {
+    display: inline-flex;
+  }
+
   .hero-pattern::before {
     opacity: 0.09;
     background-position: -174px 160px, -170px 142px, 86px 180px, -150px 230px;
@@ -986,8 +1056,7 @@ blockquote {
   }
 
   .hero-photo-wrap::before {
-    border-width: 5px;
-    transform: translate(-7px, -5px);
+    display: none;
   }
 
   .chevron-mark {

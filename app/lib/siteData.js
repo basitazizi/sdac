@@ -107,6 +107,7 @@ export const serviceCategories = [
     title: "Youth & Education",
     icon: GraduationCap,
     image: "/sdac-community-presentation.png",
+    imagePosition: "46% 32%",
     items: [
       "Youth mentorship",
       "School navigation",
