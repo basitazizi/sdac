@@ -7,9 +7,6 @@ export default function HomePage() {
   return (
     <main className="min-h-screen overflow-hidden bg-white text-ink">
       <section className="hero-pattern relative">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_47%_31%,rgba(255,255,255,0.75),transparent_32rem)]" />
-        <div className="chevron-mark" aria-hidden="true" />
-
         <div className="hero-shell relative z-10 mx-auto grid min-h-[608px] max-w-[884px] grid-cols-[1fr_260px] items-start gap-8 px-5 pt-[106px] sm:px-8 lg:px-0">
           <div className="relative z-10 max-w-[585px]">
             <p className="eyebrow">Welcome To SDAC</p>
@@ -30,10 +27,6 @@ export default function HomePage() {
                 Get Support <span aria-hidden="true">-&gt;</span>
               </Link>
             </div>
-          </div>
-
-          <div className="hero-photo-wrap" aria-hidden="true">
-            <div className="hero-photo" />
           </div>
         </div>
       </section>

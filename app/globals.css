@@ -24,14 +24,13 @@ a {
 
 .hero-pattern {
   position: relative;
-  min-height: 608px;
+  min-height: 760px;
   isolation: isolate;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 56%, rgba(255, 255, 255, 0.18) 100%),
-    radial-gradient(circle at 54% 47%, rgba(30, 40, 54, 0.08) 0 9rem, transparent 9.1rem),
-    radial-gradient(circle at 46% 34%, rgba(30, 40, 54, 0.07) 0 10rem, transparent 10.1rem),
-    radial-gradient(circle at 29% 55%, rgba(30, 40, 54, 0.07) 0 12rem, transparent 12.1rem),
-    #ffffff;
+    linear-gradient(90deg, rgba(21, 20, 19, 0.72) 0%, rgba(21, 20, 19, 0.48) 45%, rgba(21, 20, 19, 0.12) 100%),
+    url("/sdac-home-hero-bg.png");
+  background-position: center 72%;
+  background-size: cover;
 }
 
 .hero-pattern::before {
@@ -39,15 +38,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: -2;
-  opacity: 0.12;
-  background-image:
-    linear-gradient(135deg, transparent 0 34%, rgba(73, 71, 68, 0.18) 34.4% 35.6%, transparent 36%),
-    radial-gradient(circle at 16% 41%, transparent 0 72px, rgba(73, 71, 68, 0.23) 73px 76px, transparent 77px),
-    radial-gradient(circle at 25% 52%, transparent 0 92px, rgba(73, 71, 68, 0.2) 93px 96px, transparent 97px),
-    radial-gradient(circle at 17% 48%, rgba(252, 191, 26, 0.4) 0 52px, transparent 53px);
-  background-size: 520px 440px, 560px 560px, 600px 600px, 430px 430px;
-  background-position: -76px 88px, -74px 78px, 332px 74px, -86px 160px;
-  background-repeat: no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), transparent 34%);
 }
 
 .hero-pattern::after {
@@ -57,9 +48,39 @@ a {
   bottom: -2px;
   z-index: -1;
   width: 100vw;
-  height: 176px;
+  height: 76px;
   transform: translateX(-50%);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), #fff 65%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff 90%);
+}
+
+.hero-shell {
+  grid-template-columns: minmax(0, 620px);
+  align-items: center;
+  padding-bottom: 142px;
+}
+
+.hero-pattern .eyebrow,
+.hero-pattern h1,
+.hero-pattern p {
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.22);
+}
+
+.hero-pattern .eyebrow::after {
+  background: #fcbf1a;
+}
+
+.hero-pattern .btn-primary {
+  color: #494744;
+  background: #fcbf1a;
+  box-shadow: 0 12px 28px rgba(252, 191, 26, 0.2);
+}
+
+.hero-pattern .btn-accent {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  box-shadow: none;
 }
 
 .eyebrow {
@@ -976,87 +997,22 @@ blockquote {
   text-align: center;
 }
 
-.chevron-mark {
-  position: absolute;
-  z-index: 0;
-  left: -184px;
-  bottom: -74px;
-  width: 304px;
-  height: 304px;
-  border-top: 42px solid #fcbf1a;
-  border-right: 42px solid #fcbf1a;
-  transform: rotate(45deg);
-  opacity: 0.96;
-}
-
-.hero-photo-wrap {
-  position: absolute;
-  top: 0;
-  right: calc((100vw - 884px) / -2 - 92px);
-  width: min(48vw, 572px);
-  min-width: 500px;
-  aspect-ratio: 1;
-  padding: 16px;
-  border-radius: 50%;
-  background: #fcbf1a;
-  transform: translateY(0);
-  box-shadow: -8px 26px 60px rgba(73, 71, 68, 0.08);
-}
-
-.hero-photo-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 8px solid rgba(255, 255, 255, 0.95);
-  transform: translate(-12px, -8px);
-}
-
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-image: url("/sdac-hero.png");
-  background-size: cover;
-  background-position: center 48%;
-}
-
-@media (max-width: 1180px) {
-  .hero-photo-wrap {
-    right: calc((100vw - 884px) / -2 - 120px);
-  }
-}
-
 @media (max-width: 1023px) {
   .header-donate {
     display: none;
   }
 
   .hero-pattern {
-    min-height: auto;
-  }
-
-  .hero-photo-wrap {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    align-self: center;
-    justify-self: end;
-    width: clamp(210px, 34vw, 300px);
-    max-width: calc(100vw - 40px);
-    min-width: 0;
-    transform: none;
-    opacity: 1;
+    min-height: 650px;
+    background-position: 58% 76%;
   }
 
   .hero-shell {
-    grid-template-columns: minmax(0, 3fr) minmax(190px, 2fr);
+    grid-template-columns: minmax(0, 620px);
     align-items: center;
     min-height: 0;
-    gap: 18px;
-    padding: 42px 20px 45px;
+    gap: 0;
+    padding: 64px 20px 72px;
   }
 
   .split-layout,
@@ -1099,40 +1055,32 @@ blockquote {
   }
 
   .hero-pattern::before {
-    opacity: 0.09;
-    background-position: -174px 160px, -170px 142px, 86px 180px, -150px 230px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.12));
   }
 
   .hero-shell {
-    grid-template-columns: minmax(0, 1fr) clamp(168px, 44vw, 190px);
+    grid-template-columns: minmax(0, 1fr);
     min-height: 0;
-    column-gap: 14px;
-    row-gap: 0;
-    padding: 34px 20px 45px;
+    gap: 0;
+    padding: 58px 20px 66px;
   }
 
   .hero-shell > div:first-child {
-    display: contents;
+    display: block;
+    max-width: min(100%, 560px);
   }
 
   .hero-shell .eyebrow {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: end;
     width: fit-content;
   }
 
   .hero-shell h1 {
-    grid-column: 1;
-    grid-row: 2;
     margin-top: 14px;
     font-size: clamp(24px, 6.6vw, 32px);
     line-height: 1.14;
   }
 
   .hero-shell h1 + p {
-    grid-column: 1 / -1;
-    grid-row: 3;
     margin-top: 24px;
     max-width: min(100%, 620px);
     font-size: 14px;
@@ -1140,39 +1088,8 @@ blockquote {
   }
 
   .hero-shell h1 + p + div {
-    grid-column: 1 / -1;
-    grid-row: 4;
     margin-top: 26px;
     gap: 14px;
-  }
-
-  .hero-photo-wrap {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    align-self: center;
-    justify-self: end;
-    width: clamp(168px, 44vw, 190px);
-    max-width: 100%;
-    z-index: 1;
-    padding: 7px;
-    transform: translateY(-8px);
-  }
-
-  .hero-photo-wrap::before {
-    display: none;
-  }
-
-  .chevron-mark {
-    left: -254px;
-    bottom: 118px;
-    width: 232px;
-    height: 232px;
-    border-width: 32px;
-    opacity: 0.28;
   }
 
   .btn-primary,
@@ -1299,19 +1216,8 @@ blockquote {
 
 @media (max-width: 520px) {
   .hero-shell {
-    grid-template-columns: minmax(0, 1fr) clamp(152px, 44vw, 184px);
+    grid-template-columns: minmax(0, 1fr);
     min-height: 0;
-    column-gap: 12px;
-  }
-
-  .hero-photo-wrap {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    width: clamp(152px, 44vw, 184px);
-    max-width: 100%;
-    transform: translateY(-8px);
   }
 
   .program-grid,
