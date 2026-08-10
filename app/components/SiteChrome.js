@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowUp, HeartHandshake, Menu } from "lucide-react";
+import { ArrowUp, HandHeart, HeartHandshake, Menu } from "lucide-react";
 import { navItems, site } from "../lib/siteData";
 
 export function SiteHeader() {
@@ -45,10 +45,16 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link className="header-donate hidden lg:flex" href="/get-involved">
-          <HeartHandshake size={18} strokeWidth={2.25} />
-          Get Support
-        </Link>
+        <div className="header-actions hidden lg:flex">
+          <Link className="header-support" href="/contact">
+            <HeartHandshake size={18} strokeWidth={2.25} />
+            Get Support
+          </Link>
+          <Link className="header-donate" href="/contact">
+            <HandHeart size={18} strokeWidth={2.25} />
+            Donate Now
+          </Link>
+        </div>
 
         <button
           type="button"
@@ -73,6 +79,9 @@ export function SiteHeader() {
             ))}
             <Link className="mobile-menu-support" href="/contact" onClick={() => setMenuOpen(false)}>
               Get Support
+            </Link>
+            <Link className="mobile-menu-donate" href="/contact" onClick={() => setMenuOpen(false)}>
+              Donate Now
             </Link>
           </nav>
         ) : null}

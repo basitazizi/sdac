@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Handshake } from "lucide-react";
 import { BandCta, IconCard, SectionHeading } from "./components/Sections";
-import { programs, services, site, values } from "./lib/siteData";
+import { services, site, values } from "./lib/siteData";
 
 export default function HomePage() {
   return (
@@ -17,9 +17,9 @@ export default function HomePage() {
               Empowering Afghan Families. Strengthening Our Community.
             </h1>
             <p className="mt-7 max-w-[560px] text-[15px] font-medium leading-[1.85] text-[#494744]">
-              San Diego Afghan Cultural Center supports youth, women, children,
-              and families through education, mentorship, community programs,
-              cultural activities, and essential resources.
+              San Diego Afghan Connections and Cultural Center supports youth,
+              women, children, and families through education, mentorship,
+              community programs, cultural activities, and essential resources.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -81,28 +81,6 @@ export default function HomePage() {
             <Link className="btn-primary" href="/services">
               View All Services <ArrowRight size={16} />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-block alt">
-        <div className="section-inner">
-          <SectionHeading
-            eyebrow="Programs & Community"
-            title="A welcoming place to learn, gather, and grow."
-            text="Real community photos and program updates can be added as SDAC shares more materials."
-          />
-          <div className="program-grid">
-            {programs.map((program, index) => (
-              <article
-                className="program-card"
-                key={program.title}
-                style={{ "--program-image": `url(${program.image})` }}
-              >
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{program.title}</h3>
-              </article>
-            ))}
           </div>
         </div>
       </section>

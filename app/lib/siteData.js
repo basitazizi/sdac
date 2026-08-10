@@ -20,8 +20,8 @@ import {
 export const site = {
   name: "San Diego Afghan Connections and Cultural Center",
   shortName: "SDAC",
-  displayName: "San Diego Afghan Cultural Center",
-  email: "info@sdaccenter.org",
+  displayName: "San Diego Afghan Connections and Cultural Center",
+  email: "sdafghanccc@gmail.com",
   phone: "(619) 205-2912",
   address: "140 W Park Ave Unit 219, El Cajon, CA 92020",
   mapUrl: "https://maps.app.goo.gl/m38Cemnd7hNQcLcc7",
@@ -215,6 +215,12 @@ export const contactMethods = [
   { label: "Phone", value: site.phone, href: "tel:+16192052912", icon: Phone },
   { label: "Email", value: site.email, href: `mailto:${site.email}`, icon: Mail },
   { label: "Office", value: site.address, href: site.mapUrl, icon: MapPin },
+  {
+    label: "Donate With Zelle",
+    value: "More info coming soon",
+    href: `mailto:${site.email}?subject=Zelle%20Donation`,
+    icon: HeartHandshake,
+  },
 ];
 
 export const involvementOptions = [

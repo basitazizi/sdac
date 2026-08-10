@@ -97,21 +97,22 @@ a {
 .site-logo-badge {
   position: relative;
   display: grid;
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   place-items: center;
-  border-radius: 50%;
+  border: 1px solid rgba(73, 71, 68, 0.14);
+  border-radius: 8px;
   background: #fcbf1a;
-  box-shadow: 0 9px 24px rgba(73, 71, 68, 0.14);
+  box-shadow: 0 10px 24px rgba(73, 71, 68, 0.15);
   overflow: hidden;
 }
 
 .site-logo-badge::after {
   content: "";
   position: absolute;
-  inset: 6px;
-  border: 1px solid rgba(73, 71, 68, 0.22);
-  border-radius: 50%;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 7px;
   pointer-events: none;
 }
 
@@ -119,12 +120,13 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  object-fit: contain;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .btn-primary,
 .btn-accent,
+.header-support,
 .header-donate {
   display: inline-flex;
   align-items: center;
@@ -138,6 +140,7 @@ a {
 
 .btn-primary:hover,
 .btn-accent:hover,
+.header-support:hover,
 .header-donate:hover {
   transform: translateY(-1px);
 }
@@ -159,6 +162,12 @@ a {
   box-shadow: 0 9px 20px rgba(252, 191, 26, 0.2);
 }
 
+.header-actions {
+  align-items: center;
+  gap: 10px;
+}
+
+.header-support,
 .header-donate {
   min-height: 44px;
   padding: 0 13px;
@@ -167,6 +176,12 @@ a {
   background: #ffffff;
   border: 2px solid #494744;
   box-shadow: 0 0 0 1px rgba(73, 71, 68, 0.05);
+}
+
+.header-donate {
+  background: #fcbf1a;
+  border-color: #fcbf1a;
+  box-shadow: 0 9px 20px rgba(252, 191, 26, 0.18);
 }
 
 .mobile-menu {
@@ -197,11 +212,18 @@ a {
   background: #f8f8f7;
 }
 
-.mobile-menu-support {
+.mobile-menu-support,
+.mobile-menu-donate {
   margin-top: 6px;
   justify-content: center;
   color: #494744 !important;
   background: #fcbf1a;
+}
+
+.mobile-menu-donate {
+  margin-top: 0;
+  color: #ffffff !important;
+  background: #494744;
 }
 
 .back-to-top {
@@ -757,14 +779,7 @@ blockquote {
   margin: 4px 0 0;
   color: #494744;
   line-height: 1.55;
-}
-
-.map-link {
-  display: inline-flex;
-  margin-top: 20px;
-  color: #494744;
-  font-weight: 900;
-  text-decoration: underline;
+  overflow-wrap: anywhere;
 }
 
 .map-frame {
@@ -773,6 +788,11 @@ blockquote {
   min-height: 360px;
   border: 0;
   box-shadow: 0 16px 45px rgba(73, 71, 68, 0.08);
+}
+
+.contact-action-column {
+  display: grid;
+  gap: 22px;
 }
 
 .contact-form {
@@ -807,6 +827,92 @@ blockquote {
   font: inherit;
 }
 
+.visit-card {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid rgba(73, 71, 68, 0.1);
+  background: #f8f8f7;
+  box-shadow: 0 16px 40px rgba(73, 71, 68, 0.07);
+}
+
+.visit-card h2 {
+  margin: 4px 0 8px;
+  color: #494744;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.visit-card p {
+  color: rgba(73, 71, 68, 0.78);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.mini-calendar {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(73, 71, 68, 0.1);
+}
+
+.calendar-head,
+.calendar-weekdays,
+.calendar-days,
+.visit-times {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.calendar-head {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  color: #494744;
+}
+
+.calendar-head span {
+  color: rgba(73, 71, 68, 0.62);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.calendar-weekdays span,
+.calendar-days span,
+.visit-times span {
+  display: grid;
+  min-height: 38px;
+  place-items: center;
+  color: #494744;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.calendar-weekdays span {
+  min-height: 24px;
+  color: rgba(73, 71, 68, 0.58);
+}
+
+.calendar-days span,
+.visit-times span {
+  border: 1px solid rgba(73, 71, 68, 0.1);
+  background: #ffffff;
+}
+
+.calendar-days span:first-child,
+.visit-times span:first-child {
+  color: #1f1f1d;
+  background: #fcbf1a;
+  border-color: #fcbf1a;
+}
+
+.visit-times {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .footer {
   color: #ffffff;
   background: #494744;
@@ -839,6 +945,7 @@ blockquote {
 .footer-brand img {
   width: 70px;
   height: 70px;
+  border-radius: 8px;
   object-fit: contain;
 }
 

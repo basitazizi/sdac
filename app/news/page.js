@@ -3,16 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "../components/Sections";
 import { newsPosts } from "../lib/siteData";
 
-const categories = [
-  "Community News",
-  "Youth Stories",
-  "Events",
-  "Program Updates",
-  "Sports",
-  "Resources",
-  "Partnerships",
-];
-
 export default function NewsPage() {
   return (
     <main>
@@ -29,11 +19,6 @@ export default function NewsPage() {
 
       <section className="section-block">
         <div className="section-inner">
-          <div className="category-row">
-            {categories.map((category) => (
-              <span key={category}>{category}</span>
-            ))}
-          </div>
           <div className="news-grid large">
             {newsPosts.concat(newsPosts).map((post, index) => (
               <article className="news-card" key={`${post.title}-${index}`}>
