@@ -217,7 +217,7 @@ export const contactMethods = [
   { label: "Office", value: site.address, href: site.mapUrl, icon: MapPin },
   {
     label: "Donate With Zelle",
-    value: "More info coming soon",
+    value: site.email,
     href: `mailto:${site.email}?subject=Zelle%20Donation`,
     icon: HeartHandshake,
   },
