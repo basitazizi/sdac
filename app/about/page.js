@@ -46,7 +46,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-block alt">
+      <section className="section-block alt origin-band">
+        <div className="section-inner origin-note">
+          <div className="established-mark">
+            <span>Established</span>
+            <strong>April 22, 2022</strong>
+          </div>
+          <div>
+            <p className="eyebrow">Our Beginning</p>
+            <h2>Built from a simple promise to be present for families.</h2>
+            <p>
+              Since April 22, 2022, SDAC has focused on practical help,
+              cultural connection, and trusted support for Afghan families
+              building life in San Diego.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
         <div className="section-inner">
           <SectionHeading
             eyebrow="Our Values"
@@ -76,12 +94,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block alt">
         <div className="section-inner">
           <SectionHeading
             eyebrow="Our History"
             title="A growing timeline of community support."
-            text="This timeline can be updated with confirmed dates, program milestones, and team history."
+            text="SDAC began on April 22, 2022 and continues to grow through classes, mentorship, partnerships, and family support."
           />
           <div className="timeline">
             {timeline.map((item, index) => (

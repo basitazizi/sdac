@@ -24,7 +24,7 @@ export default function ContactForm() {
       setStatus({
         type: "error",
         message:
-          "EmailJS is missing a public key. Add NEXT_PUBLIC_EMAILJS_PUBLIC_KEY to .env.local and restart the site.",
+          "EmailJS is missing a public key. Add NEXT_PUBLIC_EMAILJS_PUBLIC_KEY to your local or deployment environment variables, then rebuild the site.",
       });
       return;
     }

@@ -41,6 +41,10 @@ export default function HomePage() {
               families build successful lives while preserving and celebrating
               Afghan culture.
             </p>
+            <p className="established-inline">
+              Established April 22, 2022, SDAC continues to grow as a trusted
+              place for families to find support, connection, and belonging.
+            </p>
             <Link className="btn-accent compact" href="/about">
               Learn About SDAC <ArrowRight size={16} />
             </Link>

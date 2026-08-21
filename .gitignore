@@ -5,3 +5,4 @@ qa-*.png
 
 *.log
 .env*
+!.env.example

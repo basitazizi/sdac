@@ -290,6 +290,79 @@ a {
   background: #f8f8f7;
 }
 
+.origin-band {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.origin-note {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.origin-note .established-mark {
+  margin-top: 0;
+  grid-template-columns: 1fr;
+  min-width: 190px;
+  padding: 24px;
+}
+
+.origin-note h2 {
+  margin: 16px 0 0;
+  color: #494744;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.16;
+}
+
+.origin-note p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 18px 0 0;
+  color: #494744;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+.established-inline {
+  margin-top: 18px !important;
+  padding-left: 16px;
+  border-left: 4px solid #fcbf1a;
+  font-weight: 700 !important;
+}
+
+.established-mark {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 10px 14px;
+  color: #494744;
+  background: #ffffff;
+  border: 1px solid rgba(73, 71, 68, 0.12);
+  box-shadow: 0 14px 32px rgba(73, 71, 68, 0.08);
+}
+
+.established-mark span {
+  color: rgba(73, 71, 68, 0.68);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.established-mark strong {
+  color: #494744;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+}
+
 .section-inner {
   width: min(100%, 884px);
   margin: 0 auto;
@@ -1106,6 +1179,16 @@ blockquote {
     margin-top: 14px;
     font-size: clamp(24px, 6.6vw, 32px);
     line-height: 1.14;
+  }
+
+  .origin-note {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .established-mark {
+    grid-template-columns: 1fr;
+    gap: 7px;
   }
 
   .hero-shell h1 + p {
