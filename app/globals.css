@@ -848,6 +848,34 @@ blockquote {
   font: inherit;
 }
 
+.contact-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.form-status {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(73, 71, 68, 0.14);
+  color: #494744;
+  background: #f8f8f7;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.form-status.success {
+  border-color: rgba(36, 122, 78, 0.28);
+  color: #185c39;
+  background: #edf8f1;
+}
+
+.form-status.error {
+  border-color: rgba(165, 47, 47, 0.28);
+  color: #8c2525;
+  background: #fff0ee;
+}
+
 .visit-card {
   display: grid;
   gap: 18px;

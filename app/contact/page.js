@@ -1,4 +1,5 @@
 import { contactMethods, site } from "../lib/siteData";
+import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
   return (
@@ -36,56 +37,7 @@ export default function ContactPage() {
           </div>
 
           <div className="contact-action-column">
-            <form
-              id="support-form"
-              className="contact-form"
-              action={`mailto:${site.email}`}
-              method="post"
-              encType="text/plain"
-            >
-              <h2>What can we help you with?</h2>
-              <label>
-                Name
-                <input name="name" required />
-              </label>
-              <label>
-                Email
-                <input name="email" type="email" required />
-              </label>
-              <label>
-                Phone
-                <input name="phone" type="tel" />
-              </label>
-              <label>
-                Service Needed
-                <select name="service">
-                  <option>Youth Mentorship</option>
-                  <option>English Classes</option>
-                  <option>Family Assistance</option>
-                  <option>Education</option>
-                  <option>Immigration Resources</option>
-                  <option>Sports</option>
-                  <option>Partnership</option>
-                  <option>Volunteer</option>
-                  <option>Other</option>
-                </select>
-              </label>
-              <label>
-                Preferred Language
-                <select name="language">
-                  <option>English</option>
-                  <option>Dari/Farsi</option>
-                  <option>Pashto</option>
-                </select>
-              </label>
-              <label>
-                Message
-                <textarea name="message" rows={5} required />
-              </label>
-              <button className="btn-primary" type="submit">
-                Submit Request
-              </button>
-            </form>
+            <ContactForm />
 
             <aside className="visit-card" aria-labelledby="visit-card-title">
               <div>
